@@ -1,0 +1,9 @@
+# Values in this example are defaults
+mailhog:
+  version: 0.2.0
+  architecture: linux_amd64
+  smtp:
+    port: 1025
+  ui:
+  	host: 0.0.0.0
+  	port: 8025
