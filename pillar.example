@@ -5,5 +5,5 @@ mailhog:
   smtp:
     port: 1025
   ui:
-  	host: 0.0.0.0
-  	port: 8025
+    host: 0.0.0.0
+    port: 8025
