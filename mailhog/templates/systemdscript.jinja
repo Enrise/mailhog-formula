@@ -1,0 +1,11 @@
+{%- set mailhog_ui_host = salt['pillar.get']('mailhog:ui:host', '0.0.0.0') -%}
+{%- set mailhog_ui_port = salt['pillar.get']('mailhog:ui:port', '8025') -%}
+[Unit]
+Description=MailHog: Web and API based SMTP testing
+
+[Service]
+ExecStart=/opt/mailhog/mailhog start -api-bind-addr={{mailhog_ui_host}}:{{mailhog_ui_port}} -ui-bind-addr={{mailhog_ui_host}}:{{mailhog_ui_port}}
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
