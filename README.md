@@ -4,7 +4,7 @@ This Saltstack formula installs and configures MailHog for you.
 
 > **note**
 >
-> This formula has **only been tested on Ubuntu 14.04**.
+> This formula has **only been tested on Ubuntu 14.04 and 16.04**.
 
 ## Changelog
 
