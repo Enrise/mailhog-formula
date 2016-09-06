@@ -27,6 +27,7 @@ download-mailhog:
     - requires:
       - file: /opt/mailhog
 
+{% if grains['init'] != 'systemd' -%}
 /etc/init.d/mailhog:
   file.managed:
     - source: {{ mailhog_initscript }}
@@ -34,20 +35,20 @@ download-mailhog:
     - mode: 755
     - watch_in:
       - service: mailhog
-
+{% else %}
 /lib/systemd/system/mailhog.service:
   file.managed:
     - source: {{ mailhog_systemdscript }}
     - template: jinja
     - mode: 755
-    - onlyif:
-      - test -d /lib/systemd/system
     - watch_in:
       - service: mailhog
+{% endif %}
 
 mailhog:
   service.running:
     - enable: True
     - require:
       - cmd: download-mailhog
-      - file: /etc/init.d/mailhog
+      - file: {% if grains['init'] != 'systemd' -%} /etc/init.d/mailhog {% else %} /lib/systemd/system/mailhog.service {% endif %}
+
