@@ -26,7 +26,7 @@ MAILHOG_OPTS="-api-bind-addr={{mailhog_ui_host}}:{{mailhog_ui_port}} -ui-bind-ad
 case "$1" in
   start)
     echo "Starting mailhog."
-    start-stop-daemon --start --pidfile $PID --make-pidfile --user $USER --background --exec $BIN
+    start-stop-daemon --start --pidfile $PID --make-pidfile --user $USER --background --exec $BIN -- $MAILHOG_OPTS
     ;;
   stop)
     if [ -f $PID ]; then
