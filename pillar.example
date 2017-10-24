@@ -1,6 +1,6 @@
 # Values in this example are defaults
 mailhog:
-  version: 0.2.0
+  version: 1.0.0
   architecture: linux_amd64
   smtp:
     port: 1025
