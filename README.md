@@ -1,3 +1,9 @@
+# Archived and unmaintained
+
+This is an old repository that is no longer used or maintained. We advice to no longer use this repository.
+
+## Original README can be found below:
+
 # Enrise MailHog Formula [![Build Status](https://travis-ci.org/Enrise/mailhog-formula.svg?branch=master)](https://travis-ci.org/Enrise/mailhog-formula)
 
 This Saltstack formula installs and configures MailHog for you.
